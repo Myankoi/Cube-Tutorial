@@ -1,9 +1,9 @@
 :root {
-    --black: #0A0A0A;
+    --black: #24282a;
     --white: #fdfdfd;
-    --darkBlue: #14213d;
+    --darkGray: #393f4c;
     --orange: #fca311;
-    --gray: #e5e5e5;
+    --gray: #c9c9c9;
 }
 
 header {
@@ -11,7 +11,7 @@ header {
     display: flex;
     width: 100%;
     min-height: 66px;
-    background-color: var(--orange);
+    background-color: var(--black);
     justify-content: space-evenly;
     align-items: center;
 }
@@ -83,6 +83,8 @@ nav ul li a:hover::after {
 /* dropdown start*/
 .dropDown {
     position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
 .dropDown-items {
@@ -90,27 +92,27 @@ nav ul li a:hover::after {
     flex-direction: column;
     position: absolute;
     top: 85%;
-    background-color: var(--orange);
     border-radius: .25rem;
     box-shadow: 0 1px 5px 0 rgb(0, 0, 0, .1);
     padding: .75rem;
     width: 200px;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    background-color: var(--darkGray);
+    transform: translateY(-0.5px);
+    transition: opacity 250ms ease-in, transform 250ms ease-in;
     -webkit-border-radius: .25rem;
     -moz-border-radius: .25rem;
     -ms-border-radius: .25rem;
     -o-border-radius: .25rem;
-    -webkit-transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-    -moz-transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-    -ms-transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-    -o-transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-    -webkit-transform: translateY(-10px);
-    -moz-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    -o-transform: translateY(-10px);
+    -webkit-transition: opacity 250ms ease-in, transform 250ms ease-in;
+    -moz-transition: opacity 250ms ease-in, transform 250ms ease-in;
+    -ms-transition: opacity 250ms ease-in, transform 250ms ease-in;
+    -o-transition: opacity 250ms ease-in, transform 250ms ease-in;
+    -webkit-transform: translateY(-0.5px);
+    -moz-transform: translateY(-0.5px);
+    -ms-transform: translateY(-0.5px);
+    -o-transform: translateY(-0.5px);
 }
 
 .dropDown-items.active {
@@ -118,17 +120,22 @@ nav ul li a:hover::after {
     pointer-events: all;
 }
 
+.dropDown img {
+    justify-content: center;
+    align-items: center;
+}
+
 .dropDown img.active {
-    transition: all ease-in-out 250ms;
+    transition: all ease-in 250ms;
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
-    -webkit-transition: all ease-in-out 250ms;
-    -moz-transition: all ease-in-out 250ms;
-    -ms-transition: all ease-in-out 250ms;
-    -o-transition: all ease-in-out 250ms;
+    -webkit-transition: all ease-in 250ms;
+    -moz-transition: all ease-in 250ms;
+    -ms-transition: all ease-in 250ms;
+    -o-transition: all ease-in 250ms;
 }
 
 .dropDown-items li {
@@ -165,7 +172,8 @@ nav ul li a:hover::after {
 
 /* breakpoint start */
 
-@media screen and (max-width: 599px) {
+/* tablet */
+@media screen and (max-width: 800px) {
 
     header {
         justify-content: space-between;
@@ -175,6 +183,7 @@ nav ul li a:hover::after {
         margin: 5px 40px;
     }
 
+    /* hamburger-menu start */
     #close-icon {
         display: flex;
         padding: 15px 0;
@@ -193,7 +202,7 @@ nav ul li a:hover::after {
     }
 
     .nav-items {
-        background-color: rgba(252, 163, 17, 0.8);
+        background-color: rgba(36, 40, 42, 0.8);
         height: 100vh;
         transform: rotateX(-0.5px);
         opacity: 0;
@@ -231,5 +240,129 @@ nav ul li a:hover::after {
         opacity: 1;
         display: flex;
     }
+    /* hamburger-menu end */
+
+    /* dropdown start */
+
+    .dropDown-items {
+        width: 100%;
+        transform: none;
+        transition: none;
+        position: absolute;
+        opacity: 0;
 }
+
+    .dropDown-items.active {
+        position: relative;
+        background-color: rgba(36, 40, 42 , 0.1);
+        opacity: 1;
+        justify-content: center;
+        align-items: center;
+        top: 1rem;
+    }
+
+    /* dropdown end */
+
+}
+
+/* phone */
+@media screen and (max-width: 600px) {
+    header {
+        justify-content: space-between;
+    }
+    
+    header a  {
+        margin: 5px 40px;
+    }
+
+    /* dropdown start */
+
+    .dropDown-items {
+        width: 100%;
+        transform: none;
+        transition: none;
+        position: absolute;
+        opacity: 0;
+}
+
+    .dropDown-items.active {
+        position: relative;
+        background-color: rgba(36, 40, 42 , 0.1);
+        opacity: 1;
+        justify-content: center;
+        align-items: center;
+        top: 1rem;
+    }
+
+    /* dropdown end */
+
+    /* hamburger-menu start */
+    #close-icon {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 15px 30px;
+        transform: rotateX(-0.5px);
+        opacity: 0;
+        transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+        -webkit-transform: rotateX(-0.5px);
+        -moz-transform: rotateX(-0.5px);
+        -ms-transform: rotateX(-0.5px);
+        -o-transform: rotateX(-0.5px);
+}
+
+    #close-icon img {
+        margin: 0;
+    }
+
+    #close-icon.active {
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+    }
+
+    .nav-items {
+        background-color: rgba(36, 40, 42 , 0.8);
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        transform: rotateX(-0.5px);
+        opacity: 0;
+        transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+        top: 75px;
+        right: 0;
+        left: 0;
+        position: fixed;
+        justify-content: baseline;
+        display: flex;
+        flex-direction: column;
+        pointer-events: none;
+        -webkit-transform: rotateX(-0.5px);
+        -moz-transform: rotateX(-0.5px);
+        -ms-transform: rotateX(-0.5px);
+        -o-transform: rotateX(-0.5px);
+        -webkit-transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+        -moz-transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+        -ms-transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+        -o-transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+}
+
+    nav ul li {
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .nav-items.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .hamburger-menu {
+        opacity: 1;
+        display: flex;
+    }
+    /* hamburger-menu end */
+}
+
 /* breakpoint end */
