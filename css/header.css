@@ -183,6 +183,7 @@ nav ul li a:hover::after {
         margin: 5px 40px;
     }
 
+
     /* hamburger-menu start */
     #close-icon {
         display: flex;
@@ -193,7 +194,7 @@ nav ul li a:hover::after {
 }
 
     #close-icon img {
-        margin-left: 60px;
+        margin-left: 65px;
         width: 50px;
 }
 
@@ -245,6 +246,7 @@ nav ul li a:hover::after {
     /* dropdown start */
 
     .dropDown-items {
+        display: flex;
         width: 100%;
         transform: none;
         transition: none;
@@ -256,9 +258,8 @@ nav ul li a:hover::after {
         position: relative;
         background-color: rgba(36, 40, 42 , 0.1);
         opacity: 1;
-        justify-content: center;
-        align-items: center;
-        top: 1rem;
+        align-items: end;  
+        top: 0.5rem;
     }
 
     /* dropdown end */
@@ -268,11 +269,20 @@ nav ul li a:hover::after {
 /* phone */
 @media screen and (max-width: 600px) {
     header {
+        height: 40px;
         justify-content: space-between;
     }
     
     header a  {
         margin: 5px 40px;
+    }
+
+    header a img {
+        max-width: 60px;
+    }
+
+    nav {
+        font-size: 1rem;
     }
 
     /* dropdown start */
@@ -297,11 +307,15 @@ nav ul li a:hover::after {
     /* dropdown end */
 
     /* hamburger-menu start */
+    .bar {
+        height: 3px;
+    }
+
     #close-icon {
         position: fixed;
         top: 0;
         right: 0;
-        padding: 15px 30px;
+        padding: 8px 30px;
         transform: rotateX(-0.5px);
         opacity: 0;
         transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
@@ -329,7 +343,7 @@ nav ul li a:hover::after {
         transform: rotateX(-0.5px);
         opacity: 0;
         transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
-        top: 75px;
+        top: 65px;
         right: 0;
         left: 0;
         position: fixed;
